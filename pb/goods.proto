@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package="github.com/seth-shi/grpc-demo/pb";
+
+service Goods {
+    rpc Show(GoodsShowRequest) returns (GoodsData);
+}
+
+message GoodsShowRequest {
+    int64 id = 1;
+}
+
+message GoodsData {
+    int64 id = 1;
+    string name = 2;
+    double amount = 3;
+}
